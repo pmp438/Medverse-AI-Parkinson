@@ -24,8 +24,15 @@ def pksn(img_path):
 
 st.title("Medverse AI")
 
-# if st.sidebar.button('Return to Home Page'):
-#     open_browser("https://pmp438.pythonanywhere.com/")
+
+st.sidebar.markdown("""
+    <div style="text-align: center; padding-top: 20px;">
+        <a href="https://pmp438.pythonanywhere.com/" target="_blank">
+            <button style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Return to Home Page</button>
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 
@@ -45,13 +52,3 @@ if uploaded_file is not None:
     
     st.write(f"Prediction: {dic[prediction]}")
 
-    st.markdown(
-    """
-    <div style="text-align: center; padding-top: 20px;">
-        <a href="https://pmp438.pythonanywhere.com/" target="_blank">
-            <button style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Return to Home Page</button>
-        </a>
-    </div>
-    """,
-    unsafe_allow_html=True
-    )
